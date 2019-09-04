@@ -9,8 +9,8 @@ fi
 APP_ID=$1
 TAG=$2
 CONFIG_ID=$3
-KBC_STORAGE_TOKEN=$4
-echo "Running configuration ${CONFIG_ID} of application ${APP_ID} using tag ${TAG}."
+export KBC_STORAGE_TOKEN=$4
+echo "Running configuration '${CONFIG_ID}' of application '${APP_ID}' using tag '${TAG}'."
 
 docker pull quay.io/keboola/developer-portal-cli-v2:latest
 docker run --rm -e KBC_STORAGE_TOKEN quay.io/keboola/syrup-cli:latest run-job ${KBC_DEVELOPERPORTAL_APP} ${KBC_APP_TEST_CONFIG_ID} ${TAG}
