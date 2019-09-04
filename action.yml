@@ -1,18 +1,18 @@
-name: 'Puah Image to ECR'
-description: 'todo'
+name: 'Run Job in Keboola Connection'
+description: 'Run a test job in Keboola Connection (usually using a test image of a component)'
 author: 'Keboola'
 inputs: 
   app_id:
-    description: 'App'
+    description: 'Application ID (e.g. keboola.ex-db-mysql)'
     required: true
   tag:
-    description: 'Tag'
+    description: 'Application image to use (e.g. test)'
     required: true
   config_id:
-    description: 'Config ID'
+    description: 'Configuration ID in Keboola Connection (e.g. 123456)'
     required: true
   storage_token:
-    description: 'Storage Token'
+    description: 'Keboola Connection Storage Token with access to the configuration'
     required: true
 runs:
   using: 'docker'
