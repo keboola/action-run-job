@@ -1,12 +1,24 @@
-name: 'Container Action Template'
-description: 'Get started with Container actions'
-author: 'GitHub'
+name: 'Puah Image to ECR'
+description: 'todo'
+author: 'Keboola'
 inputs: 
-  myInput:
-    description: 'Input to use'
-    default: 'world'
+  app_id:
+    description: 'App'
+    required: true
+  tag:
+    description: 'Tag'
+    required: true
+  config_id:
+    description: 'Config ID'
+    required: true
+  storage_token:
+    description: 'Storage Token'
+    required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.myInput }}
+    - ${{ inputs.app_id }}
+    - ${{ inputs.tag }}
+    - ${{ inputs.config_id }}
+    - ${{ inputs.storage_token }}
